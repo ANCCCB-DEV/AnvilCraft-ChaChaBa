@@ -21,6 +21,6 @@ If used as a template, the following parts need to be modified
     - Change the author name in the first line from `Various Author` to the name you want.
 - [主类](./src/main/java/com/example/AnvilCraftExampleAddon.java)
     - Change its folder path from `project root/src/main/java/com/example/` to `project root/src/main/java/<maven_group, but replace "." with "/">`
-    - Change its class name from `AnvilCraftCCB` to the name you want, generally the `mod_name` with punctuation removed; it is recommended to use an IDE to rename it
+    - Change its class name from `AnvilCraftExampleAddon` to the name you want, generally the `mod_name` with punctuation removed; it is recommended to use an IDE to rename it
     - `MOD_ID`: change its **value** to the **value** of the `mod_id` mentioned above
     - `MOD_NAME`: change its **value** to the **value** of the `mod_name` mentioned above

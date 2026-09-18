@@ -21,6 +21,6 @@
   - 将第一行的作者名从 `Various Author` 改为你想要的名称
 - [主类](./src/main/java/com/example/AnvilCraftExampleAddon.java)
   - 将其文件夹路径从 `仓库根目录/src/main/java/com/example/` 改为 `仓库根目录/src/main/java/<maven_group，但是将“.”替换为“/”>`
-  - 将其类名从 `AnvilCraftCCB` 改为你想要的名称，一般为去除标点符号的 `mod_name`；建议使用 IDE 进行重命名
+  - 将其类名从 `AnvilCraftExampleAddon` 改为你想要的名称，一般为去除标点符号的 `mod_name`；建议使用 IDE 进行重命名
   - `MOD_ID`：将其**值**改为上文 `mod_id` 的**值**
   - `MOD_NAME`：将其**值**改为上文 `mod_name` 的**值**
