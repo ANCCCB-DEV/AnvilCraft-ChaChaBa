@@ -1,12 +1,12 @@
 [versions]
 minecraft = "1.21.1"
-neoforge = "21.1.250"
+neoforge = "21.1.248"
 
-anvillib = "2.0.0+snapshot.530"
+anvillib = "2.0.0+snapshot.506"
 ageratum = "0.0.1+build.111"
-anvilcraft = "1.6.0+snapshot.2323"
+anvilcraft = "1.6.0+snapshot.2154"
 
-jei = "19.50.0.414"
+jei = "19.32.0.358"
 jade = "15.10.5+neoforge"
 
 parchment = "2024.11.17"
