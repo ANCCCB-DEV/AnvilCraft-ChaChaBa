@@ -1,0 +1,9 @@
+{
+  "type": "anvilcraft:block_crush",
+  "input": {
+    "blocks": "minecraft:pink_concrete"
+  },
+  "result": {
+    "block": "anvilcraft_chachaba:fragile_concrete_pink"
+  }
+}

@@ -3,12 +3,18 @@ package dev.anvilcraft.ccb.init;
 import dev.anvilcraft.ccb.AnvilCraftCCB;
 import dev.anvilcraft.ccb.block.CementWormBlock;
 import dev.anvilcraft.ccb.block.ChaAnvilBlock;
+import dev.anvilcraft.ccb.block.FragileConcreteBlock;
 import dev.anvilcraft.ccb.block.GeneticOozeBlock;
 import dev.anvilcraft.ccb.block.GeneticOozeCauldronBlock;
 import dev.anvilcraft.ccb.block.item.WormBlockItem;
 import dev.anvilcraft.lib.v2.registrum.util.entry.BlockEntry;
+import dev.dubhe.anvilcraft.block.state.Color;
 import dev.dubhe.anvilcraft.data.AnvilCraftDatagen;
+import dev.dubhe.anvilcraft.init.block.ModBlockTags;
+import dev.dubhe.anvilcraft.init.item.ModItemTags;
 import dev.dubhe.anvilcraft.util.DataGenUtil;
+import it.unimi.dsi.fastutil.objects.Object2ObjectLinkedOpenHashMap;
+import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -91,6 +97,61 @@ public class CCBBlocks {
             .end())
         .build()
         .register();
+
+    /**
+     * 易碎混凝土，16 色。
+     *
+     * <p>硬度 0.4（同下界岩），任意镐子均可挖掘，但必须精准采集才会掉落自身。
+     */
+    public static final Object2ObjectMap<Color, BlockEntry<FragileConcreteBlock>> FRAGILE_CONCRETES
+        = registerFragileConcretes();
+
+    private static Object2ObjectMap<Color, BlockEntry<FragileConcreteBlock>> registerFragileConcretes() {
+        Object2ObjectMap<Color, BlockEntry<FragileConcreteBlock>> map = new Object2ObjectLinkedOpenHashMap<>();
+        for (Color color : Color.values()) {
+            map.put(color, registerFragileConcreteBlock(color));
+        }
+        return map;
+    }
+
+    private static BlockEntry<FragileConcreteBlock> registerFragileConcreteBlock(Color color) {
+        return REGISTRUM.block("fragile_concrete_" + color, FragileConcreteBlock::new)
+            .lang("Fragile " + toDisplayName(color) + " Concrete")
+            .initialProperties(() -> Blocks.NETHERRACK)
+            .properties(properties -> properties
+                .strength(0.4F)
+                .requiresCorrectToolForDrops())
+            .item()
+            .tag(ModItemTags.DYED_COLORS.get(color))
+            .build()
+            .blockstate((ctx, provider) -> provider.simpleBlock(
+                ctx.getEntry(),
+                provider.models()
+                    .cubeAll(ctx.getName(), AnvilCraftCCB.of("block/fragile_concrete_" + color))
+            ))
+            .loot((tables, block) -> tables.add(block, tables.createSilkTouchOnlyTable(block)))
+            .tag(
+                BlockTags.MINEABLE_WITH_PICKAXE,
+                ModBlockTags.DYED_COLORS.get(color)
+            )
+            .register();
+    }
+
+    /**
+     * 把 {@link Color} 的序列化名转成显示名，例如 {@code light_blue} → {@code Light Blue}。
+     *
+     * @param color 颜色枚举
+     * @return 首字母大写的空格分隔显示名
+     */
+    private static String toDisplayName(Color color) {
+        StringBuilder sb = new StringBuilder();
+        for (String word : color.getSerializedName().split("_")) {
+            if (word.isEmpty()) continue;
+            if (!sb.isEmpty()) sb.append(' ');
+            sb.append(Character.toUpperCase(word.charAt(0))).append(word.substring(1));
+        }
+        return sb.toString();
+    }
 
     public static void register() {}
 }

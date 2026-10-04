@@ -1,0 +1,16 @@
+{
+  "type": "anvilcraft:solid_liquid",
+  "fluid": "anvilcraft:light_gray_cement",
+  "ingredients": [
+    {
+      "count": 4,
+      "items": "#c:gravels"
+    }
+  ],
+  "results": [
+    {
+      "count": 16,
+      "id": "anvilcraft_chachaba:fragile_concrete_light_gray"
+    }
+  ]
+}
