@@ -18,7 +18,9 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.Items;
@@ -31,7 +33,7 @@ import static dev.anvilcraft.ccb.AnvilCraftCCB.REGISTRUM;
 
 public class CCBBlocks {
     static {
-        REGISTRUM.defaultCreativeTab(CCBItemGroups.CHACHABA_ITEMS.getKey());
+        REGISTRUM.defaultCreativeTab((ResourceKey<CreativeModeTab>) null);
     }
 
     @SuppressWarnings("unused")

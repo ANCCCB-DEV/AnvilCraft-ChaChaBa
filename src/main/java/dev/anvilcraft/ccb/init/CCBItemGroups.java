@@ -1,6 +1,7 @@
 package dev.anvilcraft.ccb.init;
 
 import dev.anvilcraft.ccb.AnvilCraftCCB;
+import dev.dubhe.anvilcraft.init.item.ModItemGroups;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.bus.api.IEventBus;
@@ -18,15 +19,9 @@ public class CCBItemGroups {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CHACHABA_ITEMS = DEFERRED_REGISTER.register(
         "item", () -> CreativeModeTab.builder()
             .icon(CCBItems.TUNING_FORK::asStack)
-            .displayItems((ctx, entries) -> {
-            })
-            .title(
-                REGISTRUM.addLang(
-                    "itemGroup",
-                    AnvilCraftCCB.of("addon_items"),
-                    "AnvilCraft: ChaChaBa"
-                )
-            )
+            .displayItems(CCBItemTabContents::addItems)
+            .title(REGISTRUM.addLang("itemGroup", AnvilCraftCCB.of("addon_items"), "AnvilCraft: ChaChaBa"))
+            .withTabsBefore(ModItemGroups.ANVILCRAFT_BUILDING_BLOCKS.getId(), ModItemGroups.ANVILCRAFT_ITEMS.getId())
             .build()
     );
 
