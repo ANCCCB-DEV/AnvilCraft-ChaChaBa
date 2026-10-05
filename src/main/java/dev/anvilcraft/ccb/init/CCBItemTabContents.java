@@ -16,7 +16,7 @@ public class CCBItemTabContents {
         CreativeModeTab.Output output
     ) {
         if (ModItemGroupsAccessor.anvilcraft$isLegacyCreativeTabEnabled()) {
-            addConcretes(output);
+            addAll(output);
             return;
         }
         CreativeTabSections.build(
@@ -25,10 +25,23 @@ public class CCBItemTabContents {
             output,
             sections -> {
                 sections.section(
-                    createSection(
-                        "building_blocks/concrete",
-                        "anvilcraft.creative.section.building_blocks.concrete"
-                    ),
+                    createSection("items/tools", "anvilcraft.creative.section.items.tools"),
+                    CCBItemTabContents::addTools
+                );
+                sections.section(
+                    createSection("functional_blocks/functional", "anvilcraft.creative.section.functional_blocks.functional"),
+                    CCBItemTabContents::addFunctionalBlocks
+                );
+                sections.section(
+                    createSection("items/foods", "anvilcraft.creative.section.items.foods"),
+                    CCBItemTabContents::addFoods
+                );
+                sections.section(
+                    createSection("items/fluids", "anvilcraft.creative.section.items.fluids"),
+                    CCBItemTabContents::addFluids
+                );
+                sections.section(
+                    createSection("building_blocks/concrete", "anvilcraft.creative.section.building_blocks.concrete"),
                     CCBItemTabContents::addConcretes
                 );
             }
@@ -47,6 +60,37 @@ public class CCBItemTabContents {
             .text(Component.translatable(titleKey))
             .tooltip(Component.translatable(titleKey))
             .build();
+    }
+
+    /**
+     * 旧版标签页不支持分区，按分区顺序平铺全部物品。
+     */
+    private static void addAll(CreativeModeTab.Output output) {
+        addTools(output);
+        addFunctionalBlocks(output);
+        addFoods(output);
+        addFluids(output);
+        addConcretes(output);
+    }
+
+    private static void addTools(CreativeModeTab.Output output) {
+        output.accept(CCBItems.TUNING_FORK);
+    }
+
+    private static void addFunctionalBlocks(CreativeModeTab.Output output) {
+        output.accept(CCBBlocks.CHA_ANVIL);
+        output.accept(CCBBlocks.GENETIC_OOZE_BLOCK);
+        output.accept(CCBBlocks.CEMENT_WORM_BLOCK);
+    }
+
+    private static void addFoods(CreativeModeTab.Output output) {
+        output.accept(CCBItems.MUSH_BAR);
+        output.accept(CCBItems.MUSH_BAR_BOWL);
+        output.accept(CCBItems.MUSH_FRY);
+    }
+
+    private static void addFluids(CreativeModeTab.Output output) {
+        output.accept(CCBItems.GENETIC_OOZE_BUCKET);
     }
 
     private static void addConcretes(CreativeModeTab.Output output) {
