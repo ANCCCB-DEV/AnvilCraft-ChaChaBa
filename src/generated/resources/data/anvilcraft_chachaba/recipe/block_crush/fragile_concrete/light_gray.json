@@ -1,0 +1,9 @@
+{
+  "type": "anvilcraft:block_crush",
+  "input": {
+    "blocks": "minecraft:light_gray_concrete"
+  },
+  "result": {
+    "block": "anvilcraft_chachaba:fragile_concrete_light_gray"
+  }
+}

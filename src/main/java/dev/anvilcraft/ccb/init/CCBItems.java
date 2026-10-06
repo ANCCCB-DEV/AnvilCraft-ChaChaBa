@@ -9,9 +9,11 @@ import dev.dubhe.anvilcraft.util.DataGenUtil;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.food.Foods;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SolidBucketItem;
@@ -22,7 +24,7 @@ import static dev.anvilcraft.ccb.AnvilCraftCCB.REGISTRUM;
 
 public class CCBItems {
     static {
-        REGISTRUM.defaultCreativeTab(CCBItemGroups.CHACHABA_ITEMS.getKey());
+        REGISTRUM.defaultCreativeTab((ResourceKey<CreativeModeTab>) null);
     }
 
     public static final ItemEntry<TuningFork> TUNING_FORK = REGISTRUM

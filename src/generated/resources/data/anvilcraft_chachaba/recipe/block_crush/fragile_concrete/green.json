@@ -1,0 +1,9 @@
+{
+  "type": "anvilcraft:block_crush",
+  "input": {
+    "blocks": "minecraft:green_concrete"
+  },
+  "result": {
+    "block": "anvilcraft_chachaba:fragile_concrete_green"
+  }
+}
