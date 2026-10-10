@@ -72,7 +72,6 @@ public class CCBBlocks {
         .onRegister(block -> Item.BY_BLOCK.put(block, Items.CAULDRON))
         .register();
 
-    @SuppressWarnings("unused")
     public static final BlockEntry<CementWormBlock>  CEMENT_WORM_BLOCK = REGISTRUM
         .block("cement_worm_block", CementWormBlock::new)
         .lang("Cement Worm")
@@ -101,6 +100,7 @@ public class CCBBlocks {
         .build()
         .register();
 
+    @SuppressWarnings("unused")
     public static final BlockEntry<PlatformPaverBlock> PLATFORM_PAVER = REGISTRUM
         .block("platform_paver", PlatformPaverBlock::new)
         .properties(properties -> properties.noOcclusion().isValidSpawn(Blocks::never))
