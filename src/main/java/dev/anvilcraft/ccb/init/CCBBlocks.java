@@ -6,6 +6,7 @@ import dev.anvilcraft.ccb.block.ChaAnvilBlock;
 import dev.anvilcraft.ccb.block.FragileConcreteBlock;
 import dev.anvilcraft.ccb.block.GeneticOozeBlock;
 import dev.anvilcraft.ccb.block.GeneticOozeCauldronBlock;
+import dev.anvilcraft.ccb.block.PlatformPaverBlock;
 import dev.anvilcraft.ccb.block.item.WormBlockItem;
 import dev.anvilcraft.lib.v2.registrum.util.entry.BlockEntry;
 import dev.dubhe.anvilcraft.block.state.Color;
@@ -98,6 +99,13 @@ public class CCBBlocks {
             .rotation(0, 225, 0).scale(0.4F).end()
             .end())
         .build()
+        .register();
+
+    public static final BlockEntry<PlatformPaverBlock> PLATFORM_PAVER = REGISTRUM
+        .block("platform_paver", PlatformPaverBlock::new)
+        .properties(properties -> properties.noOcclusion().isValidSpawn(Blocks::never))
+        .blockstate(DataGenUtil::noExtraModelOrState)
+        .simpleItem()
         .register();
 
     /**
