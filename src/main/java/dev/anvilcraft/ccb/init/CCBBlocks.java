@@ -26,6 +26,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.CustomData;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
@@ -72,6 +73,7 @@ public class CCBBlocks {
         .onRegister(block -> Item.BY_BLOCK.put(block, Items.CAULDRON))
         .register();
 
+    //region 水泥蠕虫
     public static final BlockEntry<CementWormBlock>  CEMENT_WORM_BLOCK = REGISTRUM
         .block("cement_worm_block", CementWormBlock::new)
         .lang("Cement Worm")
@@ -99,12 +101,34 @@ public class CCBBlocks {
             .end())
         .build()
         .register();
+    //endregion
 
     @SuppressWarnings("unused")
     public static final BlockEntry<PlatformPaverBlock> PLATFORM_PAVER = REGISTRUM
         .block("platform_paver", PlatformPaverBlock::new)
         .properties(properties -> properties.noOcclusion().isValidSpawn(Blocks::never))
         .blockstate(DataGenUtil::noExtraModelOrState)
+        .simpleItem()
+        .register();
+
+    @SuppressWarnings("unused")
+    public static final BlockEntry<Block> PRODUCING_WELL = REGISTRUM
+        .block("producing_well", Block::new)
+        .simpleItem()
+        .blockstate(DataGenUtil::noExtraModelOrState)
+        .register();
+
+    @SuppressWarnings("unused")
+    public static final BlockEntry<Block> INJECTION_WELL = REGISTRUM
+        .block("injection_well", Block::new)
+        .simpleItem()
+        .blockstate(DataGenUtil::noExtraModelOrState)
+        .register();
+
+    @SuppressWarnings("unused")
+    public static final BlockEntry<Block> OIL_FOUNTAIN = REGISTRUM
+        .block("oil_fountain", Block::new)
+        .blockstate(DataGenUtil::simpleAllStates)
         .simpleItem()
         .register();
 

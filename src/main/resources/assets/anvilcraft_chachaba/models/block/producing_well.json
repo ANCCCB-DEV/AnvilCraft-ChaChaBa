@@ -1,0 +1,93 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "anvilcraft:block/pipe_end",
+		"1": "anvilcraft:block/pipe",
+		"3": "anvilcraft:block/fluid_tank_side",
+		"4": "anvilcraft:block/fluid_tank_top",
+		"5": "anvilcraft:block/cut_brass_pillar_top",
+		"particle": "anvilcraft:block/fluid_tank_side"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 6, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 6], "texture": "#5"},
+				"east": {"uv": [16, 0, 0, 6], "texture": "#5"},
+				"south": {"uv": [0, 0, 16, 6], "texture": "#5"},
+				"west": {"uv": [16, 0, 0, 6], "texture": "#5"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#4"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#4"}
+			}
+		},
+		{
+			"from": [3, 14, 3],
+			"to": [13, 16, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-1, 0, -1]},
+			"faces": {
+				"north": {"uv": [10, 0, 12, 10], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [10, 0, 12, 10], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [10, 0, 12, 10], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [10, 0, 12, 10], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [0, 0, 10, 10], "texture": "#0"},
+				"down": {"uv": [0, 0, 10, 10], "texture": "#0"}
+			}
+		},
+		{
+			"from": [4, 8, 4],
+			"to": [12, 14, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-1, 2, -1]},
+			"faces": {
+				"north": {"uv": [10, 0, 16, 8], "rotation": 90, "texture": "#1"},
+				"east": {"uv": [10, 0, 16, 8], "rotation": 90, "texture": "#1"},
+				"south": {"uv": [10, 0, 16, 8], "rotation": 90, "texture": "#1"},
+				"west": {"uv": [10, 0, 16, 8], "rotation": 90, "texture": "#1"}
+			}
+		},
+		{
+			"from": [2, 6, 2],
+			"to": [14, 8, 14],
+			"faces": {
+				"north": {"uv": [2, 0, 14, 2], "texture": "#3"},
+				"east": {"uv": [2, 0, 14, 2], "texture": "#3"},
+				"south": {"uv": [2, 0, 14, 2], "texture": "#3"},
+				"west": {"uv": [2, 0, 14, 2], "texture": "#3"},
+				"up": {"uv": [2, 2, 14, 14], "texture": "#4"},
+				"down": {"uv": [0, 1, 12, 13], "texture": "#missing"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -135, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, -135, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"scale": [0.5, 0.5, 0.5]
+		}
+	}
+}
