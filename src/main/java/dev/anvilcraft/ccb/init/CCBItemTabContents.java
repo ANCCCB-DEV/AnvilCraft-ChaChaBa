@@ -79,6 +79,9 @@ public class CCBItemTabContents {
 
     private static void addFunctionalBlocks(CreativeModeTab.Output output) {
         output.accept(CCBBlocks.CHA_ANVIL);
+        output.accept(CCBBlocks.PLATFORM_PAVER);
+        output.accept(CCBBlocks.PRODUCING_WELL);
+        output.accept(CCBBlocks.INJECTION_WELL);
         output.accept(CCBBlocks.GENETIC_OOZE_BLOCK);
         output.accept(CCBBlocks.CEMENT_WORM_BLOCK);
     }
