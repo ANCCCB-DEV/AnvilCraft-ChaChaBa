@@ -4,6 +4,6 @@
     "blocks": "minecraft:lime_concrete"
   },
   "result": {
-    "block": "anvilcraft_chachaba:fragile_concrete_lime"
+    "block": "anvilcraft_chachaba:lime_fragile_concrete"
   }
 }

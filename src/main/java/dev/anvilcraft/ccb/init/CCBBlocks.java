@@ -73,7 +73,7 @@ public class CCBBlocks {
         .onRegister(block -> Item.BY_BLOCK.put(block, Items.CAULDRON))
         .register();
 
-    //region 水泥蠕虫
+    // region 水泥蠕虫
     public static final BlockEntry<CementWormBlock>  CEMENT_WORM_BLOCK = REGISTRUM
         .block("cement_worm_block", CementWormBlock::new)
         .lang("Cement Worm")
@@ -101,7 +101,7 @@ public class CCBBlocks {
             .end())
         .build()
         .register();
-    //endregion
+    // endregion
 
     @SuppressWarnings("unused")
     public static final BlockEntry<PlatformPaverBlock> PLATFORM_PAVER = REGISTRUM
@@ -149,8 +149,7 @@ public class CCBBlocks {
     }
 
     private static BlockEntry<FragileConcreteBlock> registerFragileConcreteBlock(Color color) {
-        return REGISTRUM.block("fragile_concrete_" + color, FragileConcreteBlock::new)
-            .lang("Fragile " + toDisplayName(color) + " Concrete")
+        return REGISTRUM.block(color + "_fragile_concrete", FragileConcreteBlock::new)
             .initialProperties(() -> Blocks.NETHERRACK)
             .properties(properties -> properties
                 .strength(0.4F)
@@ -169,22 +168,6 @@ public class CCBBlocks {
                 ModBlockTags.DYED_COLORS.get(color)
             )
             .register();
-    }
-
-    /**
-     * 把 {@link Color} 的序列化名转成显示名，例如 {@code light_blue} → {@code Light Blue}。
-     *
-     * @param color 颜色枚举
-     * @return 首字母大写的空格分隔显示名
-     */
-    private static String toDisplayName(Color color) {
-        StringBuilder sb = new StringBuilder();
-        for (String word : color.getSerializedName().split("_")) {
-            if (word.isEmpty()) continue;
-            if (!sb.isEmpty()) sb.append(' ');
-            sb.append(Character.toUpperCase(word.charAt(0))).append(word.substring(1));
-        }
-        return sb.toString();
     }
 
     public static void register() {}

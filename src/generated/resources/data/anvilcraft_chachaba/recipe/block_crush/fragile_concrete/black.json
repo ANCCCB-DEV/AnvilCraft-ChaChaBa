@@ -4,6 +4,6 @@
     "blocks": "minecraft:black_concrete"
   },
   "result": {
-    "block": "anvilcraft_chachaba:fragile_concrete_black"
+    "block": "anvilcraft_chachaba:black_fragile_concrete"
   }
 }
