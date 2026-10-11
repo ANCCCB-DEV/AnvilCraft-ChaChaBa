@@ -4,6 +4,6 @@
     "blocks": "minecraft:light_blue_concrete"
   },
   "result": {
-    "block": "anvilcraft_chachaba:fragile_concrete_light_blue"
+    "block": "anvilcraft_chachaba:light_blue_fragile_concrete"
   }
 }

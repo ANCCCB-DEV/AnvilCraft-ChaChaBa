@@ -1,21 +1,21 @@
 {
   "values": [
     "anvilcraft_chachaba:genetic_ooze_cauldron",
-    "anvilcraft_chachaba:fragile_concrete_white",
-    "anvilcraft_chachaba:fragile_concrete_light_gray",
-    "anvilcraft_chachaba:fragile_concrete_gray",
-    "anvilcraft_chachaba:fragile_concrete_black",
-    "anvilcraft_chachaba:fragile_concrete_brown",
-    "anvilcraft_chachaba:fragile_concrete_red",
-    "anvilcraft_chachaba:fragile_concrete_orange",
-    "anvilcraft_chachaba:fragile_concrete_yellow",
-    "anvilcraft_chachaba:fragile_concrete_lime",
-    "anvilcraft_chachaba:fragile_concrete_green",
-    "anvilcraft_chachaba:fragile_concrete_cyan",
-    "anvilcraft_chachaba:fragile_concrete_light_blue",
-    "anvilcraft_chachaba:fragile_concrete_blue",
-    "anvilcraft_chachaba:fragile_concrete_purple",
-    "anvilcraft_chachaba:fragile_concrete_magenta",
-    "anvilcraft_chachaba:fragile_concrete_pink"
+    "anvilcraft_chachaba:white_fragile_concrete",
+    "anvilcraft_chachaba:light_gray_fragile_concrete",
+    "anvilcraft_chachaba:gray_fragile_concrete",
+    "anvilcraft_chachaba:black_fragile_concrete",
+    "anvilcraft_chachaba:brown_fragile_concrete",
+    "anvilcraft_chachaba:red_fragile_concrete",
+    "anvilcraft_chachaba:orange_fragile_concrete",
+    "anvilcraft_chachaba:yellow_fragile_concrete",
+    "anvilcraft_chachaba:lime_fragile_concrete",
+    "anvilcraft_chachaba:green_fragile_concrete",
+    "anvilcraft_chachaba:cyan_fragile_concrete",
+    "anvilcraft_chachaba:light_blue_fragile_concrete",
+    "anvilcraft_chachaba:blue_fragile_concrete",
+    "anvilcraft_chachaba:purple_fragile_concrete",
+    "anvilcraft_chachaba:magenta_fragile_concrete",
+    "anvilcraft_chachaba:pink_fragile_concrete"
   ]
 }
