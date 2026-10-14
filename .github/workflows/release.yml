@@ -22,6 +22,12 @@ jobs:
           path: gradle.properties
           properties: 'mod_id mod_name java_version minecraft_version_range'
 
+      - name: Unify Mod Name
+        id: mod_name
+        run: |
+          MESSAGE=$(printf '%s' "${{ steps.properties.outputs.mod_name }}" | sed 's/[<>:"\/\\|?*]//g')
+          echo "mod_name=$MESSAGE" >> $GITHUB_OUTPUT
+
       - name: Read Versions
         id: versions
         uses: Gu-ZT/toml-reader-action@1.0.0
@@ -59,7 +65,7 @@ jobs:
       - name: Capture Build Artifacts
         uses: actions/upload-artifact@v4.3.3
         with:
-          name: "${{ steps.properties.outputs.mod_name }} ${{ steps.version.outputs.version }}"
+          name: "${{ steps.mod_name.outputs.mod_name }} ${{ steps.version.outputs.version }}"
           path: build/libs/${{ steps.properties.outputs.mod_id }}-neoforge-${{ steps.version.outputs.version }}.jar
 
       - name: Publish to Maven
@@ -79,7 +85,7 @@ jobs:
           version-type: ${{ env.VERSION_TYPE }}
           java: ${{ steps.properties.outputs.java_version }}
           fail-mode: skip
-          changelog: Early test version, please download and play with caution. 早期测试版本，请谨慎下载游玩
+          changelog: ${{ github.event.release.body }}
           dependencies: |
             anvil-lib(embedded){modrinth:nKAcAL9b}{curseforge:1484302}
             ageratum(embedded){modrinth:9YApuDd3}{curseforge:1500610}
